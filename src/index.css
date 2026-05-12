@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@import "shadcn/tailwind.css";
+
+@theme {
+  --color-brand: #FF7E67;
+  --color-brand-muted: #FFD7CE;
+  --color-brand-accent: #FFF5F2;
+  --color-brand-border: #FFE4DC;
+  --color-surface: #FFF5F2;
+  
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --radius-xl: 32px;
+  --radius-4xl: 40px;
+}
+
+@theme inline {
+    --font-heading: var(--font-body);
+    --font-sans: var(--font-body);
+    
+    --color-background: var(--color-surface);
+    --color-foreground: oklch(0.145 0 0);
+    
+    --color-primary: var(--color-brand);
+    --color-primary-foreground: white;
+    
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-2xl: 2rem;
+}
+
+:root {
+    --background: oklch(0.985 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: #FF7E67;
+    --primary-foreground: #FFFFFF;
+    --secondary: #FFF5F2;
+    --secondary-foreground: #FF7E67;
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: #FFE4DC;
+    --accent-foreground: #FF7E67;
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: #FFE4DC;
+    --input: #F8F9FA;
+    --ring: #FF7E67;
+    --radius: 1.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-brand-border outline-none;
+    }
+  body {
+    @apply bg-[var(--color-surface)] text-slate-800 font-sans antialiased;
+  }
+}
+
+.onboarding-card {
+  @apply bg-white rounded-[var(--radius-xl)] shadow-sm border border-brand-border;
+}
+
+.btn-primary {
+  @apply bg-[var(--color-brand)] text-white rounded-2xl px-6 py-4 font-bold shadow-lg shadow-brand/20 transition-all hover:brightness-105 active:scale-95;
+}
+
+@custom-variant dark (&:is(.dark *));
